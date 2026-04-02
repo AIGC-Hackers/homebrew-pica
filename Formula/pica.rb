@@ -1,25 +1,25 @@
 class Pica < Formula
   desc "Picadabra CLI"
   homepage "https://github.com/AIGC-Hackers/pica-cli"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.1.0/pica-darwin-arm64.tar.gz"
-      sha256 "ed9c940f16f4a552bab6ce6f143a6b36f47c408a8c0ed90b2001e558ee5eece1"
+      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.1.1/pica-darwin-arm64.tar.gz"
+      sha256 "b1d3a9e1285bedfc55533a024be2219c3eba022562ff3e96d90621edcb7cde08"
     else
-      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.1.0/pica-darwin-x64.tar.gz"
-      sha256 "dfbae89b264b6ab79579772863d20b55a46f6eaeb33efa342cf1e76c490a692c"
+      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.1.1/pica-darwin-x64.tar.gz"
+      sha256 "54e8daa6752baaef61c6874a3f7121df00029054046ae8b194d9446f92ca10cb"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.1.0/pica-linux-arm64.tar.gz"
-      sha256 "85409248eb3f07435a40ffb3d4eef0713f673f91347b1be1da5de584f4984036"
+      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.1.1/pica-linux-arm64.tar.gz"
+      sha256 "8bee5859866e87ee9e6e26175a0be6880cad116948f93f472c6e81267e81e5c2"
     else
-      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.1.0/pica-linux-x64.tar.gz"
-      sha256 "1c1b93f763c94c7e2126c4678e8bf6318c49d499c00f97303ff806f9fa70b859"
+      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.1.1/pica-linux-x64.tar.gz"
+      sha256 "1e29998b8ca917ca19ca4057cf8fd8204b4fbbed2636eabf705a54432abd12ba"
     end
   end
 
