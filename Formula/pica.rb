@@ -1,30 +1,20 @@
 class Pica < Formula
   desc "Picadabra CLI"
   homepage "https://github.com/AIGC-Hackers/pica-cli"
-  version "0.2.3"
+  url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.2.3/pica-bundle.tar.gz"
+  sha256 "78330383a28d93a589c295e598c6ff79b4e31293111f66c815794426ca08f9ec"
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.2.3/pica-darwin-arm64.tar.gz"
-      sha256 "bc15fb2fa69c3633eba3049b1e25e4efa3bc36d1d81f812279be8f42891feea6"
-    else
-      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.2.3/pica-darwin-x64.tar.gz"
-      sha256 "881265570d9031f3dceeb36b1192a9eadeb3c4c0f948eba5f38b71a9f46eb344"
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.arm?
-      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.2.3/pica-linux-arm64.tar.gz"
-      sha256 "6987b067617f8a79307da5650e19f7554950dcb6f807bd7d80798acd4593cc17"
-    else
-      url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.2.3/pica-linux-x64.tar.gz"
-      sha256 "e6675b7a7cc81a134e751ea4533934d4bc81000cb53f90e80939bfa0520e7ee5"
-    end
-  end
+  depends_on "oven-sh/bun/bun"
 
   def install
-    bin.install "pica"
+    libexec.install "pica.js"
+
+    (libexec/"pica").write <<~SH
+      #!/bin/bash
+      exec "#{Formula["oven-sh/bun/bun"].opt_bin}/bun" "#{libexec}/pica.js" "$@"
+    SH
+    chmod 0555, libexec/"pica"
+    bin.install_symlink libexec/"pica"
   end
 
   test do

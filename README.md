@@ -9,6 +9,9 @@ brew tap AIGC-Hackers/pica
 brew install pica
 ```
 
+The formula installs the lightweight JS bundle and declares Bun as a runtime
+dependency automatically.
+
 ## Upgrade
 
 ```bash
