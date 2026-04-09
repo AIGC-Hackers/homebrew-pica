@@ -1,8 +1,8 @@
 class Pica < Formula
   desc "Picadabra CLI"
   homepage "https://github.com/AIGC-Hackers/pica-cli"
-  url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.2.3/pica-bundle.tar.gz"
-  sha256 "78330383a28d93a589c295e598c6ff79b4e31293111f66c815794426ca08f9ec"
+  url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.2.4/pica-bundle.tar.gz"
+  sha256 "fd61d54a182b5c57bce2f71ce6dae61342b5b69c706df4edcd6d8bf9edc27e7c"
 
   depends_on "oven-sh/bun/bun"
 
@@ -11,7 +11,7 @@ class Pica < Formula
 
     (libexec/"pica").write <<~SH
       #!/bin/bash
-      exec "#{Formula["oven-sh/bun/bun"].opt_bin}/bun" "#{libexec}/pica.js" "$@"
+      exec "#{Formula["oven-sh/bun/bun"].opt_bin}/bun" "#{libexec}/pica.js" ""
     SH
     chmod 0555, libexec/"pica"
     bin.install_symlink libexec/"pica"
