@@ -1,8 +1,8 @@
 class Pica < Formula
   desc "Picadabra CLI"
   homepage "https://github.com/AIGC-Hackers/pica-cli"
-  url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.2.6/pica-bundle.tar.gz"
-  sha256 "8dfecb58529bc148fa95c95dbf493dd4fcb7d9d343eb5c94313ff459ac87aaf0"
+  url "https://github.com/AIGC-Hackers/pica-cli/releases/download/v0.2.7/pica-bundle.tar.gz"
+  sha256 "41ffd7af5fc5fcc8953e921dd3717ba09c49074df6514b445a2de0631dfc15d5"
 
   depends_on "oven-sh/bun/bun"
 
